@@ -92,7 +92,7 @@ export const weddingData = {
       date: "28 October 2026",
       time: "07:00 PM",
       venue: "",
-      address: "",
+      address: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
       colorTag: "Royal Gold & Ivory",
       description:
         "The arrival of the Barat and the beginning of the wedding celebrations.",
@@ -118,7 +118,7 @@ export const weddingData = {
       date: "28 October 2026",
       time: "After Nikah",
       venue: "",
-      address: "",
+      address: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
       colorTag: "Soft Blush & Gold",
       description:
         "Dinner will be served after the Nikah ceremony.",
@@ -131,7 +131,7 @@ export const weddingData = {
       date: "29 October 2026",
       time: "07:00 AM",
       venue: "",
-      address: "",
+      address: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
       colorTag: "Soft Blush & Sage",
       description:
         "Return of the Barat on the following morning.",
