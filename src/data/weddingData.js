@@ -161,8 +161,8 @@ export const weddingData = {
   },
 
   contact: {
-    whatsapp: "9798116845",
-    phone: "9798116845"
+    whatsapp: "919798116845",
+    phone: "919798116845"
   },
 
   greetings: {
@@ -173,7 +173,7 @@ export const weddingData = {
     subtext:
       "Your du'as and warm wishes mean the world to the couple. Send your blessings and wishes for their new journey together.",
 
-    whatsappNumber: "9798116845"
+    whatsappNumber: "919798116845"
   },
 
   footer: {

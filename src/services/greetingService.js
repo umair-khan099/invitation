@@ -33,7 +33,7 @@ export function getWhatsAppDestinationNumber() {
   return (
     weddingData.contact?.whatsapp ||
     weddingData.greetings?.whatsappNumber ||
-    '9693839972'
+    '919798116845'
   );
 }
 
