@@ -143,7 +143,7 @@ export default function WeddingStoryScroller({ isGateOpen = true }) {
         tl.to(
           currentSlide,
           {
-            opacity: 0,
+            autoAlpha: 0,
             scale: 0.97,
             y: -30,
             filter: 'blur(5px)',
@@ -157,13 +157,13 @@ export default function WeddingStoryScroller({ isGateOpen = true }) {
         tl.fromTo(
           nextSlide,
           {
-            opacity: 0,
+            autoAlpha: 0,
             scale: 0.98,
             y: 22,
             filter: 'blur(5px)',
           },
           {
-            opacity: 1,
+            autoAlpha: 1,
             scale: 1,
             y: 0,
             filter: 'blur(0px)',
@@ -249,9 +249,9 @@ export default function WeddingStoryScroller({ isGateOpen = true }) {
       slides.forEach((slide, i) => {
         if (!slide) return;
         if (i === 0) {
-          gsap.set(slide, { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' });
+          gsap.set(slide, { autoAlpha: 1, y: 0, scale: 1, filter: 'blur(0px)' });
         } else {
-          gsap.set(slide, { opacity: 0, y: 22, scale: 0.98, filter: 'blur(5px)' });
+          gsap.set(slide, { autoAlpha: 0, y: 22, scale: 0.98, filter: 'blur(5px)' });
         }
       });
     }, containerRef);
@@ -296,14 +296,15 @@ export default function WeddingStoryScroller({ isGateOpen = true }) {
         <div className="relative w-full max-w-4xl h-full flex items-center justify-center px-4 sm:px-8 md:px-16 pointer-events-none">
           {stories.map((story, index) => {
             const isCurrent = activeIndex === index;
+            const isInitialHero = index === 0;
             return (
               <div
                 key={story.key}
                 id={story.id}
                 ref={(el) => (slideRefs.current[index] = el)}
-                className={`absolute inset-0 m-auto flex items-center justify-center transition-all duration-150 transform-gpu ${
+                className={`story-slide absolute inset-0 m-auto flex items-center justify-center transform-gpu ${
                   isCurrent ? 'story-slide-active' : 'story-slide-inactive'
-                }`}
+                } ${isInitialHero ? 'story-slide-hero' : 'story-slide-subsequent'}`}
                 style={{
                   willChange: 'transform, opacity, filter',
                   zIndex: isCurrent ? 30 : 10,

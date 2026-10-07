@@ -109,6 +109,28 @@
 }
 
 /* Story Slide Layering and Pointer Events */
+.story-slide {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Safe initial paint state before GSAP initializes:
+   Only Hero is visible initially; all subsequent sections are hidden from frame 0.
+   When GSAP takes over, its inline styles cleanly manage the scroll transitions. */
+.story-slide-subsequent {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.story-slide-hero {
+  opacity: 1;
+  visibility: visible;
+}
+
 .story-slide-active {
   pointer-events: auto !important;
   z-index: 30 !important;
