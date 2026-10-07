@@ -36,7 +36,7 @@ export const weddingData = {
 
     motherName: "",
 
-    profession: "Gov. Teacher",
+    // profession: "Gov. Teacher",
 
     personalLine:
       "With the blessings of Allah and the love of her family, she begins a beautiful new chapter of life.",
@@ -52,7 +52,7 @@ export const weddingData = {
 
     motherName: "",
 
-    profession: "Army Officer",
+    // profession: "Army Officer",
 
     personalLine:
       "With faith, family blessings, and the grace of Allah, he begins a sacred new chapter of life.",

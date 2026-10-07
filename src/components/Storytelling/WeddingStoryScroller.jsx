@@ -62,18 +62,17 @@ export default function WeddingStoryScroller({ isGateOpen = true }) {
   // for immediate, energetic opening feedback (Requirements 1, 2, 3, 7)
   const stepDistances = useMemo(() => {
     return [
-      360, // Hero -> Bride (fast, responsive opening)
-      360, // Bride -> Groom (close, fluid transition)
-      400, // Groom -> Union
-      400, // Union -> Dua
-      420, // Dua -> Mehndi
-      380, // Mehndi -> Chowk
-      380, // Chowk -> Barat
-      380, // Barat -> Nikah
-      380, // Nikah -> Rukhsati
-      420, // Rukhsati -> Countdown
-      420, // Countdown -> Greetings
-      400, // Greetings -> Signoff
+      360, // 0: Hero -> Bride (fast, responsive opening)
+      360, // 1: Bride -> Groom (close, fluid transition)
+      400, // 2: Groom -> Union
+      400, // 3: Union -> Dua
+      420, // 4: Dua -> Barat (Ceremony 1)
+      380, // 5: Barat -> Nikah (Ceremony 2)
+      380, // 6: Nikah -> Dinner (Ceremony 3)
+      380, // 7: Dinner -> Return of Barat (Ceremony 4)
+      420, // 8: Return of Barat -> Countdown
+      420, // 9: Countdown -> Greetings
+      400, // 10: Greetings -> Signoff
     ];
   }, []);
 
@@ -220,6 +219,7 @@ export default function WeddingStoryScroller({ isGateOpen = true }) {
               closestIdx = idx;
             }
           });
+          closestIdx = Math.max(0, Math.min(closestIdx, stories.length - 1));
           setActiveIndex(closestIdx);
         },
       });
@@ -287,13 +287,13 @@ export default function WeddingStoryScroller({ isGateOpen = true }) {
       {/* Pinned Central Story Stage (Requirements 1, 2, 7) */}
       <div
         ref={stageRef}
-        className="fixed top-0 left-0 w-full h-screen flex items-center justify-center pointer-events-none select-none overflow-hidden z-20"
+        className="fixed top-0 left-0 w-full h-screen flex items-center justify-center pointer-events-none overflow-hidden z-30"
       >
         {/* Subtle radial aura centered on the stage, completely shadow-free */}
-        <div className="absolute inset-0 m-auto w-[320px] sm:w-[500px] h-[320px] sm:h-[500px] rounded-full bg-gradient-radial from-[#F4DCE2]/50 via-[#E9B8C4]/15 to-transparent blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 m-auto w-[320px] sm:w-[500px] h-[320px] sm:h-[500px] rounded-full bg-gradient-radial from-[#F4DCE2]/50 via-[#E9B8C4]/15 to-transparent blur-3xl pointer-events-none select-none" />
 
         {/* Stories Stack: All stories occupy the EXACT SAME CENTRAL POSITION */}
-        <div className="relative w-full max-w-4xl h-full flex items-center justify-center px-4 sm:px-8 md:px-16">
+        <div className="relative w-full max-w-4xl h-full flex items-center justify-center px-4 sm:px-8 md:px-16 pointer-events-none">
           {stories.map((story, index) => {
             const isCurrent = activeIndex === index;
             return (
@@ -302,10 +302,12 @@ export default function WeddingStoryScroller({ isGateOpen = true }) {
                 id={story.id}
                 ref={(el) => (slideRefs.current[index] = el)}
                 className={`absolute inset-0 m-auto flex items-center justify-center transition-all duration-150 transform-gpu ${
-                  isCurrent ? 'pointer-events-auto' : 'pointer-events-none'
+                  isCurrent ? 'story-slide-active' : 'story-slide-inactive'
                 }`}
                 style={{
                   willChange: 'transform, opacity, filter',
+                  zIndex: isCurrent ? 30 : 10,
+                  pointerEvents: isCurrent ? 'auto' : 'none',
                 }}
               >
                 {story.component}

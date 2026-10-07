@@ -49,11 +49,11 @@ export default function EventStory({ event, index = 0, totalEvents = 5 }) {
       )}
 
       {/* Color / Dress Theme */}
-      {event.colorTag && (
+      {/* {event.colorTag && (
         <div className="story-elem text-[11px] sm:text-xs font-sans tracking-wider uppercase text-[#8B7668]/80 italic">
           Theme: <span className="font-semibold text-[#5E705B]">{event.colorTag}</span>
         </div>
-      )}
+      )} */}
 
       {/* Divider */}
       {dividerUrl && (

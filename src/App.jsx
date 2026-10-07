@@ -18,6 +18,16 @@ export default function App() {
   useLenis(isGateOpen);
 
   useEffect(() => {
+    window.__openInvitationGate = () => {
+      setIsLoading(false);
+      setIsGateOpen(true);
+    };
+    return () => {
+      delete window.__openInvitationGate;
+    };
+  }, []);
+
+  useEffect(() => {
     if (isGateOpen) {
       const t1 = setTimeout(() => {
         ScrollTrigger.refresh();
@@ -51,8 +61,8 @@ export default function App() {
           {/* MINIMAL LUXURY NAVBAR (Z-50) */}
           <Navbar visible={isGateOpen} />
 
-          {/* PINNED CINEMATIC SCROLLTELLING EXPERIENCE (Z-20) */}
-          <main className="relative z-20">
+          {/* PINNED CINEMATIC SCROLLTELLING EXPERIENCE (Z-30) */}
+          <main className="relative z-30">
             <WeddingStoryScroller isGateOpen={isGateOpen} />
           </main>
         </div>

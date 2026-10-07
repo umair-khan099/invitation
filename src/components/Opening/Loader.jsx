@@ -10,12 +10,14 @@ export default function Loader({ onComplete }) {
   const ornamentRef = useRef(null);
   const progressRef = useRef(null);
   const [progressVal, setProgressVal] = useState(0);
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         onComplete: () => {
-          if (onComplete) onComplete();
+          if (onCompleteRef.current) onCompleteRef.current();
         }
       });
 
@@ -60,7 +62,7 @@ export default function Loader({ onComplete }) {
     }, containerRef);
 
     return () => ctx.revert();
-  }, [onComplete]);
+  }, []);
 
   const bismillahUrl = getAssetUrl('islamic', 'bismillah');
   const dividerUrl = getAssetUrl('ornaments', 'dividerOrnament');

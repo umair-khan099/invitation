@@ -108,6 +108,35 @@
   background: #5e705b;
 }
 
+/* Story Slide Layering and Pointer Events */
+.story-slide-active {
+  pointer-events: auto !important;
+  z-index: 30 !important;
+}
+
+.story-slide-inactive {
+  pointer-events: none !important;
+  z-index: 10 !important;
+}
+
+.story-slide-inactive * {
+  pointer-events: none !important;
+}
+
+.story-slide-active input,
+.story-slide-active textarea {
+  pointer-events: auto !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  cursor: text !important;
+}
+
+.story-slide-active button,
+.story-slide-active a {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -116,3 +145,4 @@
     scroll-behavior: auto !important;
   }
 }
+

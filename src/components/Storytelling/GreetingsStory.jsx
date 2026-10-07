@@ -103,7 +103,7 @@ export default function GreetingsStory() {
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4 text-left">
+          <form onSubmit={handleSubmit} data-lenis-prevent className="space-y-4 text-left pointer-events-auto select-auto">
             {errorMsg && (
               <div className="border border-[#C98F9D] bg-[#F4DCE2]/50 rounded-lg p-2.5 flex items-center gap-2 text-xs text-[#4B403B]">
                 <AlertCircle className="w-4 h-4 text-[#C98F9D] shrink-0" />
@@ -125,7 +125,7 @@ export default function GreetingsStory() {
                   if (errorMsg) setErrorMsg('');
                 }}
                 placeholder="e.g. Mr. & Mrs. Tariq & Family"
-                className="w-full px-3 py-2 border-b border-[#C98F9D]/50 focus:border-[#5E705B] bg-transparent text-sm text-[#4B403B] placeholder-[#8B7668]/40 outline-none transition-colors"
+                className="w-full px-3 py-2 border-b border-[#C98F9D]/50 focus:border-[#5E705B] bg-transparent text-sm text-[#4B403B] placeholder-[#8B7668]/40 outline-none transition-colors cursor-text pointer-events-auto select-text touch-manipulation"
               />
             </div>
 
@@ -143,7 +143,7 @@ export default function GreetingsStory() {
                   if (errorMsg) setErrorMsg('');
                 }}
                 placeholder="Write your prayers, warm wishes, and congratulations here..."
-                className="w-full px-3 py-2 border-b border-[#C98F9D]/50 focus:border-[#5E705B] bg-transparent text-sm text-[#4B403B] placeholder-[#8B7668]/40 outline-none transition-colors resize-none"
+                className="w-full px-3 py-2 border-b border-[#C98F9D]/50 focus:border-[#5E705B] bg-transparent text-sm text-[#4B403B] placeholder-[#8B7668]/40 outline-none transition-colors resize-none cursor-text pointer-events-auto select-text touch-manipulation"
               />
             </div>
 

@@ -26,10 +26,10 @@ export default function BrideStory() {
       </p>
 
       {/* Profession */}
-      <div className="story-elem inline-flex items-center gap-2 text-xs sm:text-sm font-sans tracking-widest text-[#5E705B] uppercase font-medium">
+      {/* <div className="story-elem inline-flex items-center gap-2 text-xs sm:text-sm font-sans tracking-widest text-[#5E705B] uppercase font-medium">
         <span>Profession:</span>
         <span className="font-semibold text-[#4B403B]">{weddingData.bride.profession}</span>
-      </div>
+      </div> */}
 
       {/* Divider */}
       {dividerUrl && (
