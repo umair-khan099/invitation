@@ -40,25 +40,34 @@ export default function Greetings() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setErrorMsg('');
-    setSuccessRes(null);
+
+    const trimmedName = name.trim();
+    const trimmedMessage = message.trim();
+
+    if (!trimmedName) {
+      setErrorMsg('Please enter your name.');
+      return;
+    }
+
+    if (!trimmedMessage) {
+      setErrorMsg('Please enter your wishes or du\'a message.');
+      return;
+    }
 
     try {
       setLoading(true);
-      const res = await sendBlessing({ name, message, isWhatsApp: true });
+      const res = sendBlessing({ name: trimmedName, message: trimmedMessage });
       setLoading(false);
       setSuccessRes(res);
+      // Clear form ONLY after successfully triggering the WhatsApp action
       setName('');
       setMessage('');
-
-      if (res.whatsappUrl) {
-        window.open(res.whatsappUrl, '_blank');
-      }
     } catch (err) {
       setLoading(false);
-      setErrorMsg(err.message || 'An error occurred while sending your blessing.');
+      setErrorMsg(err.message || 'An error occurred while preparing your message.');
     }
   };
 
@@ -85,7 +94,7 @@ export default function Greetings() {
                   {successRes.message}
                 </h3>
                 <p className="text-xs md:text-sm font-sans text-[#8B7668]">
-                  Your message has been formatted. If WhatsApp did not open automatically, click the button below.
+                  WhatsApp has opened with your message pre-filled. If it did not open automatically, click the button below.
                 </p>
                 {successRes.whatsappUrl && (
                   <a
@@ -153,10 +162,10 @@ export default function Greetings() {
                   className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#C98F9D] via-[#C5A059] to-[#5E705B] text-[#FBF7F1] font-sans text-xs uppercase tracking-[0.2em] font-bold shadow-md hover:shadow-lg hover:opacity-95 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   {loading ? (
-                    <span>Sending Blessing...</span>
+                    <span>Preparing Message...</span>
                   ) : (
                     <>
-                      <span>Send Blessing</span>
+                      <span>Send Wishes</span>
                       <Send className="w-4 h-4" />
                     </>
                   )}

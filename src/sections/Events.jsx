@@ -5,6 +5,7 @@ import { Calendar, Clock, MapPin, ExternalLink } from 'lucide-react';
 import SectionHeading from '../components/Common/SectionHeading';
 import GlassPanel from '../components/Common/GlassPanel';
 import { weddingData } from '../data/weddingData';
+import { getDirectionsUrl, getDisplayAddress, getDisplayVenue } from '../utils/locationHelper';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,29 +125,44 @@ export default function Events() {
                           <span>{event.time}</span>
                         </div>
 
-                        <div className="flex items-start gap-2 text-[#8B7668]">
-                          <MapPin className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
-                          <div>
-                            <span className="font-semibold text-[#4B403B] block">{event.venue}</span>
-                            <span>{event.address}</span>
-                          </div>
-                        </div>
+                        {(() => {
+                          const displayVenue = getDisplayVenue(event);
+                          const displayAddress = getDisplayAddress(event);
+                          if (!displayVenue && !displayAddress) return null;
+
+                          return (
+                            <div className="flex items-start gap-2 text-[#8B7668]">
+                              <MapPin className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+                              <div>
+                                {displayVenue && (
+                                  <span className="font-semibold text-[#4B403B] block">{displayVenue}</span>
+                                )}
+                                {displayAddress && <span>{displayAddress}</span>}
+                              </div>
+                            </div>
+                          );
+                        })()}
                       </div>
 
-                      {/* Google Maps External Link Button */}
-                      {event.gmapUrl && (
-                        <div className="pt-2">
-                          <a
-                            href={event.gmapUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-sans tracking-wider uppercase font-semibold text-[#5E705B] hover:text-[#C98F9D] transition-colors"
-                          >
-                            <span>View Location Map</span>
-                            <ExternalLink className="w-3.5 h-3.5" />
-                          </a>
-                        </div>
-                      )}
+                      {/* Google Maps Directions Action CTA */}
+                      {(() => {
+                        const directionsUrl = getDirectionsUrl(event);
+                        if (!directionsUrl) return null;
+
+                        return (
+                          <div className="pt-2">
+                            <a
+                              href={directionsUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C98F9D]/60 bg-[#FBF7F1]/80 hover:bg-[#F4DCE2]/40 text-xs font-sans tracking-wider uppercase font-semibold text-[#4B403B] hover:text-[#5E705B] hover:border-[#5E705B] active:scale-95 transition-all duration-300 shadow-sm"
+                            >
+                              <MapPin className="w-3.5 h-3.5 text-[#C98F9D]" />
+                              <span>Get Directions</span>
+                            </a>
+                          </div>
+                        );
+                      })()}
                     </GlassPanel>
                   </div>
                 </div>

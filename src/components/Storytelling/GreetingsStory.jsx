@@ -13,25 +13,34 @@ export default function GreetingsStory() {
 
   const dividerUrl = getAssetUrl('ornaments', 'dividerOrnament');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setErrorMsg('');
-    setSuccessRes(null);
+
+    const trimmedName = name.trim();
+    const trimmedMessage = message.trim();
+
+    if (!trimmedName) {
+      setErrorMsg('Please enter your name.');
+      return;
+    }
+
+    if (!trimmedMessage) {
+      setErrorMsg('Please enter your wishes or du\'a message.');
+      return;
+    }
 
     try {
       setLoading(true);
-      const res = await sendBlessing({ name, message, isWhatsApp: true });
+      const res = sendBlessing({ name: trimmedName, message: trimmedMessage });
       setLoading(false);
       setSuccessRes(res);
+      // Clear form ONLY after successfully triggering the WhatsApp action
       setName('');
       setMessage('');
-
-      if (res.whatsappUrl) {
-        window.open(res.whatsappUrl, '_blank');
-      }
     } catch (err) {
       setLoading(false);
-      setErrorMsg(err.message || 'An error occurred while sending your blessing.');
+      setErrorMsg(err.message || 'An error occurred while preparing your message.');
     }
   };
 
@@ -70,21 +79,24 @@ export default function GreetingsStory() {
               {successRes.message}
             </h3>
             <p className="text-xs font-sans text-[#8B7668]">
-              Your message has been formatted. If WhatsApp did not open automatically, click below.
+              WhatsApp has opened with your message pre-filled. If it did not open automatically, tap below to open.
             </p>
             {successRes.whatsappUrl && (
               <a
                 href={successRes.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#5E705B] text-[#FBF7F1] text-xs font-sans uppercase tracking-widest font-semibold hover:bg-[#4B403B] transition-colors mt-1"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#5E705B] hover:bg-[#4B403B] text-[#FBF7F1] text-xs font-sans uppercase tracking-widest font-semibold transition-colors mt-1 active:scale-95"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
                 <span>Open in WhatsApp</span>
               </a>
             )}
             <button
-              onClick={() => setSuccessRes(null)}
+              onClick={() => {
+                setSuccessRes(null);
+                setErrorMsg('');
+              }}
               className="block mx-auto text-xs font-sans text-[#8B7668] underline pt-1 hover:text-[#4B403B] cursor-pointer"
             >
               Send another message
@@ -93,7 +105,7 @@ export default function GreetingsStory() {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4 text-left">
             {errorMsg && (
-              <div className="border border-[#C98F9D] bg-[#F4DCE2]/40 rounded-lg p-2.5 flex items-center gap-2 text-xs text-[#4B403B]">
+              <div className="border border-[#C98F9D] bg-[#F4DCE2]/50 rounded-lg p-2.5 flex items-center gap-2 text-xs text-[#4B403B]">
                 <AlertCircle className="w-4 h-4 text-[#C98F9D] shrink-0" />
                 <span>{errorMsg}</span>
               </div>
@@ -107,9 +119,11 @@ export default function GreetingsStory() {
               <input
                 id="story-guest-name"
                 type="text"
-                required
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  if (errorMsg) setErrorMsg('');
+                }}
                 placeholder="e.g. Mr. & Mrs. Tariq & Family"
                 className="w-full px-3 py-2 border-b border-[#C98F9D]/50 focus:border-[#5E705B] bg-transparent text-sm text-[#4B403B] placeholder-[#8B7668]/40 outline-none transition-colors"
               />
@@ -118,31 +132,33 @@ export default function GreetingsStory() {
             {/* Guest Message Input */}
             <div className="space-y-1">
               <label htmlFor="story-guest-message" className="block text-[11px] font-sans uppercase tracking-widest font-semibold text-[#8B7668]">
-                Your Blessing / Du'a <span className="text-[#C98F9D]">*</span>
+                Your Wishes / Du'a <span className="text-[#C98F9D]">*</span>
               </label>
               <textarea
                 id="story-guest-message"
-                required
-                rows={2}
+                rows={3}
                 value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Write your prayers and warm wishes..."
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                  if (errorMsg) setErrorMsg('');
+                }}
+                placeholder="Write your prayers, warm wishes, and congratulations here..."
                 className="w-full px-3 py-2 border-b border-[#C98F9D]/50 focus:border-[#5E705B] bg-transparent text-sm text-[#4B403B] placeholder-[#8B7668]/40 outline-none transition-colors resize-none"
               />
             </div>
 
-            {/* Submit Button (Flat pill, NO shadow) */}
+            {/* Submit Button (Flat pill, elegant styling) */}
             <div className="pt-2 text-center">
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex items-center justify-center gap-2 px-8 py-2.5 rounded-full bg-[#5E705B] hover:bg-[#4B403B] text-[#FBF7F1] font-sans text-xs uppercase tracking-[0.2em] font-semibold transition-colors disabled:opacity-50 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-2.5 rounded-full bg-[#5E705B] hover:bg-[#4B403B] text-[#FBF7F1] font-sans text-xs uppercase tracking-[0.2em] font-semibold active:scale-95 transition-all duration-300 disabled:opacity-50 cursor-pointer shadow-sm hover:shadow"
               >
                 {loading ? (
-                  <span>Sending Blessing...</span>
+                  <span>Preparing Message...</span>
                 ) : (
                   <>
-                    <span>Send Blessing</span>
+                    <span>Send Wishes</span>
                     <Send className="w-3.5 h-3.5" />
                   </>
                 )}

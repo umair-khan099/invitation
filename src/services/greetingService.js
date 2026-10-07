@@ -1,37 +1,89 @@
 // Greeting Service abstraction
-// Validates guest blessings and formats a direct WhatsApp link or server dispatch
+// Validates guest blessings and formats a direct WhatsApp link or dispatches to WhatsApp
 
-import { weddingData } from '../data/weddingData';
+import { weddingData } from '../data/weddingData.js';
 
-export async function sendBlessing({ name, message, isWhatsApp = true }) {
-  if (!name || name.trim() === '') {
-    throw new Error("Please enter your name.");
+/**
+ * Builds the pre-filled WhatsApp message text according to user requirements:
+ * Assalamu Alaikum,
+ * Name: {cleanName}
+ * Wishes & Du'a:
+ * {cleanMessage}
+ * 
+ * From the Wedding Invitation
+ */
+export function formatWhatsAppMessage({ name, message }) {
+  const cleanName = (name || '').trim();
+  const cleanMessage = (message || '').trim();
+
+  return [
+    'Assalamu Alaikum,',
+    `Name: ${cleanName}`,
+    'Wishes & Du\'a:',
+    cleanMessage,
+    '',
+    'From the Wedding Invitation'
+  ].join('\n');
+}
+
+/**
+ * Returns the configured WhatsApp destination number.
+ */
+export function getWhatsAppDestinationNumber() {
+  return (
+    weddingData.contact?.whatsapp ||
+    weddingData.greetings?.whatsappNumber ||
+    '9197981106845'
+  );
+}
+
+/**
+ * Validates inputs and returns the complete wa.me click-to-chat URL with properly encoded message.
+ */
+export function getWhatsAppUrl({ name, message }) {
+  const cleanName = (name || '').trim();
+  const cleanMessage = (message || '').trim();
+
+  if (!cleanName) {
+    throw new Error('Please enter your name.');
   }
-  if (!message || message.trim() === '') {
-    throw new Error("Please enter a warm blessing or message.");
+  if (!cleanMessage) {
+    throw new Error('Please enter your wishes or du\'a message.');
   }
 
-  // Simulate network latency for luxury UX loading state
-  await new Promise((resolve) => setTimeout(resolve, 800));
+  const phone = getWhatsAppDestinationNumber();
+  const text = formatWhatsAppMessage({ name: cleanName, message: cleanMessage });
+  const encodedText = encodeURIComponent(text);
 
-  const cleanName = name.trim();
-  const cleanMessage = message.trim();
-  const rawPhone = weddingData.greetings.whatsappNumber || "919999999999";
+  return `https://wa.me/${phone}?text=${encodedText}`;
+}
 
-  if (isWhatsApp) {
-    const formattedText = `*Wedding Blessing for ${weddingData.couple.brideName} & ${weddingData.couple.groomName}*\n\n*From:* ${cleanName}\n*Message:* ${cleanMessage}\n\n_Sent via digital wedding invitation_`;
-    const encodedText = encodeURIComponent(formattedText);
-    const waUrl = `https://wa.me/${rawPhone}?text=${encodedText}`;
+/**
+ * Dispatches the blessing to WhatsApp synchronously to preserve transient user activation
+ * and prevent browser popup blockers from suppressing the window.
+ */
+export function sendBlessing({ name, message }) {
+  const waUrl = getWhatsAppUrl({ name, message });
 
-    return {
-      success: true,
-      message: "Thank you for your beautiful blessing!",
-      whatsappUrl: waUrl
-    };
+  // On mobile browsers, assigning to window.location.href directly launches the native WhatsApp app.
+  // On desktop, opening in a new tab opens WhatsApp Web cleanly.
+  const isMobile =
+    typeof navigator !== 'undefined' &&
+    /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+
+  try {
+    if (isMobile) {
+      window.location.href = waUrl;
+    } else {
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    }
+  } catch (err) {
+    console.warn('Could not auto-open WhatsApp URL:', err);
   }
 
   return {
     success: true,
-    message: "Thank you for your beautiful blessing!"
+    message: "Your Du'a is ready to send ❤️",
+    whatsappUrl: waUrl
   };
 }
