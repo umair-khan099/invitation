@@ -94,8 +94,8 @@ export const weddingData = {
       venue: "Ansari Residence",
       address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
       mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
-      latitude: "",
-      longitude: "",
+      latitude: "25.4447048",
+      longitude: "83.8923315",
       colorTag: "Royal Gold & Ivory",
       description:
         "The arrival of the Barat and the beginning of the wedding celebrations.",
@@ -110,8 +110,8 @@ export const weddingData = {
       venue: "Ansari Residence",
       address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
       mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
-      latitude: "",
-      longitude: "",
+      latitude: "25.4447048",
+      longitude: "83.8923315",
       colorTag: "Pure White & Gold",
       description:
         "The sacred solemnization of marriage in the presence of family and loved ones.",
@@ -126,8 +126,8 @@ export const weddingData = {
       venue: "Ansari Residence",
       address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
       mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
-      latitude: "",
-      longitude: "",
+      latitude: "25.4447048",
+      longitude: "83.8923315",
       colorTag: "Soft Blush & Gold",
       description:
         "Dinner will be served after the Nikah ceremony.",
@@ -142,8 +142,8 @@ export const weddingData = {
       venue: "Ansari Residence",
       address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
       mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
-      latitude: "",
-      longitude: "",
+      latitude: "25.4447048",
+      longitude: "83.8923315",
       colorTag: "Soft Blush & Sage",
       description:
         "Return of the Barat on the following morning.",
@@ -161,7 +161,7 @@ export const weddingData = {
   },
 
   contact: {
-    whatsapp: "9197981106845",
+    whatsapp: "9798116845",
     phone: "9798116845"
   },
 
@@ -173,7 +173,7 @@ export const weddingData = {
     subtext:
       "Your du'as and warm wishes mean the world to the couple. Send your blessings and wishes for their new journey together.",
 
-    whatsappNumber: "9197981106845"
+    whatsappNumber: "9798116845"
   },
 
   footer: {
@@ -201,7 +201,7 @@ export const weddingData = {
       name: "Md. Salamuddin Ansari",
       relation: "S/o Late Qasim Ansari",
       address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
-      mobile: "9939908958"
+      mobile: "9798116845"
     },
 
     rsvp: [
