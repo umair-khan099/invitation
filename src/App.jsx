@@ -61,7 +61,7 @@ export default function App() {
           {/* MINIMAL LUXURY NAVBAR (Z-50) */}
           <Navbar visible={isGateOpen} />
 
-          {/* PINNED CINEMATIC SCROLLTELLING EXPERIENCE (Z-30) */}
+          {/* NATURAL VERTICAL STORY EXPERIENCE (Z-30) */}
           <main className="relative z-30">
             <WeddingStoryScroller isGateOpen={isGateOpen} />
           </main>

@@ -108,55 +108,27 @@
   background: #5e705b;
 }
 
-/* Story Slide Layering and Pointer Events */
-.story-slide {
-  position: absolute;
-  inset: 0;
-  margin: auto;
+/* Natural Story Section in Document Flow */
+.story-section {
+  position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Safe initial paint state before GSAP initializes:
-   Only Hero is visible initially; all subsequent sections are hidden from frame 0.
-   When GSAP takes over, its inline styles cleanly manage the scroll transitions. */
-.story-slide-subsequent {
-  opacity: 0;
-  visibility: hidden;
+.story-section input,
+.story-section textarea {
+  pointer-events: auto;
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
 }
 
-.story-slide-hero {
-  opacity: 1;
-  visibility: visible;
-}
-
-.story-slide-active {
-  pointer-events: auto !important;
-  z-index: 30 !important;
-}
-
-.story-slide-inactive {
-  pointer-events: none !important;
-  z-index: 10 !important;
-}
-
-.story-slide-inactive * {
-  pointer-events: none !important;
-}
-
-.story-slide-active input,
-.story-slide-active textarea {
-  pointer-events: auto !important;
-  user-select: text !important;
-  -webkit-user-select: text !important;
-  cursor: text !important;
-}
-
-.story-slide-active button,
-.story-slide-active a {
-  pointer-events: auto !important;
-  cursor: pointer !important;
+.story-section button,
+.story-section a {
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
