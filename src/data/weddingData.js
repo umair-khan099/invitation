@@ -36,7 +36,7 @@ export const weddingData = {
 
     motherName: "",
 
-    profession: "",
+    // profession: "Gov. Teacher",
 
     personalLine:
       "With the blessings of Allah and the love of her family, she begins a beautiful new chapter of life.",
@@ -52,7 +52,7 @@ export const weddingData = {
 
     motherName: "",
 
-    profession: "Property Deaier",
+    // profession: "Army Officer",
 
     personalLine:
       "With faith, family blessings, and the grace of Allah, he begins a sacred new chapter of life.",
@@ -91,12 +91,15 @@ export const weddingData = {
       title: "Arrival of Barat",
       date: "29 November 2026",
       time: "07:00 PM",
-      venue: "",
-      address: "R/o sangam vihar [Delhi]",
+      venue: "Ansari Residence",
+      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
+      mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
+      latitude: "25.4447048",
+      longitude: "83.8923315",
       colorTag: "Royal Gold & Ivory",
       description:
         "The arrival of the Barat and the beginning of the wedding celebrations.",
-      gmapUrl: ""
+      gmapUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac"
     },
 
     {
@@ -104,12 +107,15 @@ export const weddingData = {
       title: "Nikah",
       date: "29 november 2026",
       time: "08:00 PM",
-      venue: "",
-      address: "R/o Sangam Vihar [Delhi]",
+      venue: "Ansari Residence",
+      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
+      mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
+      latitude: "25.4447048",
+      longitude: "83.8923315",
       colorTag: "Pure White & Gold",
       description:
         "The sacred solemnization of marriage in the presence of family and loved ones.",
-      gmapUrl: ""
+      gmapUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac"
     },
 
     {
@@ -117,25 +123,31 @@ export const weddingData = {
       title: "Dinner",
       date: "29 november 2026",
       time: "After Nikah",
-      venue: "",
-      address: "R/o sangam vihar [Delhi]",
+      venue: "Ansari Residence",
+      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
+      mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
+      latitude: "25.4447048",
+      longitude: "83.8923315",
       colorTag: "Soft Blush & Gold",
       description:
         "Dinner will be served after the Nikah ceremony.",
-      gmapUrl: ""
+      gmapUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac"
     },
 
     {
       id: "return-barat",
       title: "Return of Barat",
-      date: "29 november 2026",
-      time: "11:00 AM",
-      venue: "",
-      address: "",
+      date: "29 October 2026",
+      time: "07:00 AM",
+      venue: "Ansari Residence",
+      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
+      mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
+      latitude: "25.4447048",
+      longitude: "83.8923315",
       colorTag: "Soft Blush & Sage",
       description:
         "Return of the Barat on the following morning.",
-      gmapUrl: ""
+      gmapUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac"
     }
   ],
 
@@ -148,6 +160,11 @@ export const weddingData = {
       "Insha'Allah, we look forward to celebrating this blessed occasion with you."
   },
 
+  contact: {
+    whatsapp: "919798116845",
+    phone: "919798116845"
+  },
+
   greetings: {
     enabled: true,
 
@@ -156,7 +173,7 @@ export const weddingData = {
     subtext:
       "Your du'as and warm wishes mean the world to the couple. Send your blessings and wishes for their new journey together.",
 
-    whatsappNumber: ""
+    whatsappNumber: "919798116845"
   },
 
   footer: {

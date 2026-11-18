@@ -108,6 +108,29 @@
   background: #5e705b;
 }
 
+/* Natural Story Section in Document Flow */
+.story-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-section input,
+.story-section textarea {
+  pointer-events: auto;
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+}
+
+.story-section button,
+.story-section a {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -116,3 +139,4 @@
     scroll-behavior: auto !important;
   }
 }
+

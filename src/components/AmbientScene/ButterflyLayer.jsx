@@ -75,7 +75,8 @@ export default function ButterflyLayer() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 pointer-events-none z-25 overflow-hidden"
+      className="fixed inset-0 pointer-events-none select-none z-15 overflow-hidden"
+      aria-hidden="true"
     >
       {botanicalSceneConfig.butterflies.map((bf) => {
         const url = getAssetUrl(bf.assetCategory, bf.assetKey);
@@ -85,7 +86,7 @@ export default function ButterflyLayer() {
           <div
             key={bf.id}
             id={bf.id}
-            className="absolute top-0 left-0 w-12 h-12 opacity-0 transform-gpu"
+            className="absolute top-0 left-0 w-12 h-12 opacity-0 transform-gpu pointer-events-none select-none"
           >
             <img
               src={url}

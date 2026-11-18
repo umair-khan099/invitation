@@ -73,7 +73,7 @@ export default function CountdownStory() {
       {/* Wedding Target Date Sign */}
       <div className="story-elem pt-1">
         <span className="text-xs sm:text-sm font-editorial italic text-[#5E705B]">
-          16 December 2026 • Royal Garden Estate
+          28 October 2026 | 7:00 PM
         </span>
       </div>
     </div>

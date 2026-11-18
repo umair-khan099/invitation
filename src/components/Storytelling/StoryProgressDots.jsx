@@ -9,8 +9,8 @@ export default function StoryProgressDots({ stories, activeIndex, onDotClick }) 
     { index: 3, label: 'Union' },
     { index: 4, label: "Du'a" },
     { index: 5, label: 'Ceremonies' },
-    { index: 10, label: 'Countdown' },
-    { index: 11, label: 'Blessings' },
+    { index: 9, label: 'Countdown' },
+    { index: 10, label: 'Blessings' },
   ];
 
   return (
@@ -21,7 +21,7 @@ export default function StoryProgressDots({ stories, activeIndex, onDotClick }) 
       {keyMarkers.map((marker) => {
         const isActive =
           marker.index === 5
-            ? activeIndex >= 5 && activeIndex <= 9
+            ? activeIndex >= 5 && activeIndex <= 8
             : activeIndex === marker.index;
 
         return (

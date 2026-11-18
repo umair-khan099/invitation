@@ -38,7 +38,7 @@ export default function BotanicalLayer() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 pointer-events-none select-none overflow-hidden z-40"
+      className="fixed inset-0 pointer-events-none select-none overflow-hidden z-15"
       aria-hidden="true"
     >
       {elements.map((item) => {

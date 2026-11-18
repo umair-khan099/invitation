@@ -32,7 +32,7 @@ export default function ParticleLayer() {
   const particlesArr = Array.from({ length: botanicalSceneConfig.particles.count });
 
   return (
-    <div ref={containerRef} className="fixed inset-0 pointer-events-none z-5 overflow-hidden">
+    <div ref={containerRef} className="fixed inset-0 pointer-events-none select-none z-5 overflow-hidden" aria-hidden="true">
       {particlesArr.map((_, i) => {
         const left = `${Math.floor(Math.random() * 100)}%`;
         const top = `${80 + Math.floor(Math.random() * 20)}%`;
