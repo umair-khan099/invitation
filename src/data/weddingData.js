@@ -32,7 +32,7 @@ export const weddingData = {
     role: "THE BRIDE",
     name: "Heena Khan",
 
-    fatherName: "Md. Imtiyaz khan",
+    fatherName: "Md.Imtiyaz khan",
 
     motherName: "",
 
@@ -48,7 +48,7 @@ export const weddingData = {
     role: "THE GROOM",
     name: "Rehan khan",
 
-    fatherName: "Dr. Md. Shoaib Khan ",
+    fatherName: " Md. Shoaib Khan ",
 
     motherName: "",
 
@@ -91,11 +91,11 @@ export const weddingData = {
       title: "Arrival of Barat",
       date: "29 November 2026",
       time: "07:00 PM",
-      venue: "Ansari Residence",
-      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
+      venue: "Khan Residence",
+      address: "Sangam Vihar Wazirabad Gali No-6(Delhi)",
       mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
-      latitude: "25.4447048",
-      longitude: "83.8923315",
+      latitude: "28.7288966",
+      longitude: "77.2161365",
       colorTag: "Royal Gold & Ivory",
       description:
         "The arrival of the Barat and the beginning of the wedding celebrations.",
@@ -107,11 +107,11 @@ export const weddingData = {
       title: "Nikah",
       date: "29 november 2026",
       time: "08:00 PM",
-      venue: "Ansari Residence",
-      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
+      venue: "Khan Residence",
+      address: "Sangam Vihar Wazirabad Gali No-6(Delhi)",
       mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
-      latitude: "25.4447048",
-      longitude: "83.8923315",
+      latitude: "28.7288966",
+      longitude: "77.2161365",
       colorTag: "Pure White & Gold",
       description:
         "The sacred solemnization of marriage in the presence of family and loved ones.",
@@ -123,11 +123,11 @@ export const weddingData = {
       title: "Dinner",
       date: "29 november 2026",
       time: "After Nikah",
-      venue: "Ansari Residence",
-      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
+     venue: "Khan Residence",
+      address: "Sangam Vihar Wazirabad Gali No-6(Delhi)",
       mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
-      latitude: "25.4447048",
-      longitude: "83.8923315",
+      latitude: "28.7288966",
+      longitude: "77.2161365",
       colorTag: "Soft Blush & Gold",
       description:
         "Dinner will be served after the Nikah ceremony.",
@@ -139,8 +139,8 @@ export const weddingData = {
       title: "Return of Barat",
       date: "29 October 2026",
       time: "07:00 AM",
-      venue: "Ansari Residence",
-      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
+    venue: "Khan Residence",
+      address: "Sangam Vihar Wazirabad Gali No-6(Delhi)",
       mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
       latitude: "25.4447048",
       longitude: "83.8923315",
@@ -152,7 +152,7 @@ export const weddingData = {
   ],
 
   countdown: {
-    targetDate: "2026-11-29 T7:00",
+    targetDate: "2026-11-29T19:00:00",
 
     heading: "Counting Down to the Blessed Day",
 
@@ -161,8 +161,8 @@ export const weddingData = {
   },
 
   contact: {
-    whatsapp: "919798116845",
-    phone: "919798116845"
+    whatsapp: "918929153396",
+    phone: "918929153396"
   },
 
   greetings: {
@@ -173,7 +173,7 @@ export const weddingData = {
     subtext:
       "Your du'as and warm wishes mean the world to the couple. Send your blessings and wishes for their new journey together.",
 
-    whatsappNumber: "919798116845"
+    whatsappNumber: "918929153396"
   },
 
   footer: {

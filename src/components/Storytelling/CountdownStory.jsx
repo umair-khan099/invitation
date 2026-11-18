@@ -73,7 +73,7 @@ export default function CountdownStory() {
       {/* Wedding Target Date Sign */}
       <div className="story-elem pt-1">
         <span className="text-xs sm:text-sm font-editorial italic text-[#5E705B]">
-          28 October 2026 | 7:00 PM
+          29 November 2026 | 7:00 PM
         </span>
       </div>
     </div>
