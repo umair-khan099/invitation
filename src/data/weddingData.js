@@ -3,11 +3,11 @@
 
 export const weddingData = {
   couple: {
-    brideName: "Sultana Tabassum",
-    groomName: "Md. Belal Ansari",
-    brideInitial: "S",
-    groomInitial: "B",
-    monogram: "S ♥ B",
+    brideName: "Heena Khan",
+    groomName: "Rehan Khan",
+    brideInitial: "H",
+    groomInitial: "R",
+    monogram: "H ♥ R",
     subtitle: "A blessed beginning of two lives, joined together in faith and love."
   },
 
@@ -19,9 +19,9 @@ export const weddingData = {
     greeting: "In the Name of Allah, the Most Beneficent & the Most Merciful",
 
     invitationText:
-      "Mrs. & Mr. Md. Salamuddin Ansari request the pleasure of your company on the auspicious occasion of the Wedding Ceremony of their daughter.",
+      "Mrs. & Mr. Md. imtiyaz Khan request the pleasure of your company on the auspicious occasion of the Wedding Ceremony of their daughter.",
 
-    weddingDate: "28 October 2026",
+    weddingDate: "29 november 2026",
 
     venueSummary: "",
 
@@ -30,13 +30,13 @@ export const weddingData = {
 
   bride: {
     role: "THE BRIDE",
-    name: "Sultana Tabassum",
+    name: "Heena Khan",
 
-    fatherName: "Md. Salamuddin Ansari",
+    fatherName: "Md. Imtiyaz khan",
 
     motherName: "",
 
-    profession: "Gov. Teacher",
+    profession: "",
 
     personalLine:
       "With the blessings of Allah and the love of her family, she begins a beautiful new chapter of life.",
@@ -46,13 +46,13 @@ export const weddingData = {
 
   groom: {
     role: "THE GROOM",
-    name: "Md. Belal Ansari",
+    name: "Rehan khan",
 
-    fatherName: "Dr. Md. Islam Ansari",
+    fatherName: "Dr. Md. Shoaib Khan ",
 
     motherName: "",
 
-    profession: "Army Officer",
+    profession: "Property Deaier",
 
     personalLine:
       "With faith, family blessings, and the grace of Allah, he begins a sacred new chapter of life.",
@@ -89,10 +89,10 @@ export const weddingData = {
     {
       id: "barat",
       title: "Arrival of Barat",
-      date: "28 October 2026",
+      date: "29 November 2026",
       time: "07:00 PM",
       venue: "",
-      address: "",
+      address: "R/o sangam vihar [Delhi]",
       colorTag: "Royal Gold & Ivory",
       description:
         "The arrival of the Barat and the beginning of the wedding celebrations.",
@@ -102,10 +102,10 @@ export const weddingData = {
     {
       id: "nikah",
       title: "Nikah",
-      date: "28 October 2026",
+      date: "29 november 2026",
       time: "08:00 PM",
       venue: "",
-      address: "",
+      address: "R/o Sangam Vihar [Delhi]",
       colorTag: "Pure White & Gold",
       description:
         "The sacred solemnization of marriage in the presence of family and loved ones.",
@@ -115,10 +115,10 @@ export const weddingData = {
     {
       id: "dinner",
       title: "Dinner",
-      date: "28 October 2026",
+      date: "29 november 2026",
       time: "After Nikah",
       venue: "",
-      address: "",
+      address: "R/o sangam vihar [Delhi]",
       colorTag: "Soft Blush & Gold",
       description:
         "Dinner will be served after the Nikah ceremony.",
@@ -128,8 +128,8 @@ export const weddingData = {
     {
       id: "return-barat",
       title: "Return of Barat",
-      date: "29 October 2026",
-      time: "07:00 AM",
+      date: "29 november 2026",
+      time: "11:00 AM",
       venue: "",
       address: "",
       colorTag: "Soft Blush & Sage",
@@ -140,7 +140,7 @@ export const weddingData = {
   ],
 
   countdown: {
-    targetDate: "2026-10-28T20:00:00",
+    targetDate: "2026-11-29 T7:00",
 
     heading: "Counting Down to the Blessed Day",
 
@@ -161,34 +161,34 @@ export const weddingData = {
 
   footer: {
     closingText:
-      "With love, prayers and blessings from the Ansari family.",
+      "With love, prayers and blessings from the Khan family.",
 
     islamicSignoff: "جَزَاكُمُ اللهُ خَيْرًا",
 
-    copyright: "© 2026 Sultana Tabassum & Md. Belal Ansari. Crafted with devotion."
+    copyright: "© 2026 Heena Khan & Md. rehan Khan. Crafted with devotion."
   },
 
   family: {
     brideSide: {
-      father: "Md. Salamuddin Ansari",
-      grandfather: "Late Qasim Ansari",
-      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)"
+      father: "Md. Imtyaz khan",
+      grandfather: "Md. Akbal Khan",
+       address: ""
     },
 
     groomSide: {
-      father: "Dr. Md. Islam Ansari",
-      address: "Vill. Mukhranw, P.S. Kuchhila, Dist. Kaimur (Bhabua), Bihar"
+      father: "Shoaib khan ",
+      address: ""
     },
 
     weddingFrom: {
-      name: "Md. Salamuddin Ansari",
-      relation: "S/o Late Qasim Ansari",
-      address: "Vill. & P.O. Sarenja, P.S. Rajpur, Dist. Buxar (Bihar)",
-      mobile: "9939908958"
+      name: "Md. Imtyaz khan",
+      relation: "S/o Late Akbal Khan",
+      address: "R/o Sangam vihar [Delhi]"   ,
+      mobile: "9210616304"
     },
 
     rsvp: [
-      "Md. Hussain Ansari",
+      "Qamran Khan",
       "Qari Nazeer Ahmad",
       "Md. Sagir Ansari",
       "Md. Abdullah",
