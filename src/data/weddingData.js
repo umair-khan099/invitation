@@ -87,67 +87,14 @@ export const weddingData = {
 
   events: [
     {
-      id: "barat",
-      title: "Arrival of Barat",
-      date: "29 November 2026",
-      time: "07:00 PM",
-      venue: "Khan Residence",
-      address: "Sangam Vihar Wazirabad Gali No-6(Delhi)",
-      mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
-      latitude: "28.7288966",
-      longitude: "77.2161365",
-      colorTag: "Royal Gold & Ivory",
-      description:
-        "The arrival of the Barat and the beginning of the wedding celebrations.",
-      gmapUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac"
-    },
-
-    {
       id: "nikah",
       title: "Nikah",
-      date: "29 november 2026",
-      time: "08:00 PM",
-      venue: "Khan Residence",
-      address: "Sangam Vihar Wazirabad Gali No-6(Delhi)",
-      mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
-      latitude: "28.7288966",
-      longitude: "77.2161365",
-      colorTag: "Pure White & Gold",
-      description:
-        "The sacred solemnization of marriage in the presence of family and loved ones.",
-      gmapUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac"
+      date: "29 November 2026"
     },
-
     {
-      id: "dinner",
-      title: "Dinner",
-      date: "29 november 2026",
-      time: "After Nikah",
-     venue: "Khan Residence",
-      address: "Sangam Vihar Wazirabad Gali No-6(Delhi)",
-      mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
-      latitude: "28.7288966",
-      longitude: "77.2161365",
-      colorTag: "Soft Blush & Gold",
-      description:
-        "Dinner will be served after the Nikah ceremony.",
-      gmapUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac"
-    },
-
-    {
-      id: "return-barat",
-      title: "Return of Barat",
-      date: "29 October 2026",
-      time: "07:00 AM",
-    venue: "Khan Residence",
-      address: "Sangam Vihar Wazirabad Gali No-6(Delhi)",
-      mapsUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac",
-      latitude: "25.4447048",
-      longitude: "83.8923315",
-      colorTag: "Soft Blush & Sage",
-      description:
-        "Return of the Barat on the following morning.",
-      gmapUrl: "https://maps.app.goo.gl/xpLCdYrU3jjE6aNz5?g_st=ac"
+      id: "walima",
+      title: "Walima",
+      date: "30 November 2026"
     }
   ],
 

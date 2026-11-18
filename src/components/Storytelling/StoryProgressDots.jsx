@@ -1,6 +1,10 @@
 import React from 'react';
 
 export default function StoryProgressDots({ stories, activeIndex, onDotClick }) {
+  const countdownIndex = stories?.findIndex((s) => s.id === 'countdown') ?? -1;
+  const greetingsIndex = stories?.findIndex((s) => s.id === 'greetings') ?? -1;
+  const lastCeremonyIndex = countdownIndex > 5 ? countdownIndex - 1 : 5;
+
   // Only display key chapter markers to keep UI clean and editorial
   const keyMarkers = [
     { index: 0, label: 'Welcome' },
@@ -9,8 +13,8 @@ export default function StoryProgressDots({ stories, activeIndex, onDotClick }) 
     { index: 3, label: 'Union' },
     { index: 4, label: "Du'a" },
     { index: 5, label: 'Ceremonies' },
-    { index: 9, label: 'Countdown' },
-    { index: 10, label: 'Blessings' },
+    { index: countdownIndex !== -1 ? countdownIndex : 7, label: 'Countdown' },
+    { index: greetingsIndex !== -1 ? greetingsIndex : 8, label: 'Blessings' },
   ];
 
   return (
@@ -21,7 +25,7 @@ export default function StoryProgressDots({ stories, activeIndex, onDotClick }) 
       {keyMarkers.map((marker) => {
         const isActive =
           marker.index === 5
-            ? activeIndex >= 5 && activeIndex <= 8
+            ? activeIndex >= 5 && activeIndex <= lastCeremonyIndex
             : activeIndex === marker.index;
 
         return (
